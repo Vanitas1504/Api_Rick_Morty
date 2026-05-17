@@ -1,0 +1,140 @@
+/* ===== Species Page Styles ===== */
+.species-page {
+  padding-bottom: var(--spacing-3xl);
+}
+
+.species-page__header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 110px var(--spacing-xl) var(--spacing-xl);
+  text-align: center;
+}
+
+.species-page__title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.species-page__title-accent {
+  background: var(--gradient-portal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.species-page__subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Filter Buttons */
+.species-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.species-page__filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  white-space: nowrap;
+}
+
+.species-page__filter-btn:hover {
+  border-color: rgba(68, 255, 154, 0.3);
+  background: rgba(68, 255, 154, 0.06);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+}
+
+.species-page__filter-btn--active {
+  background: rgba(68, 255, 154, 0.12);
+  border-color: var(--color-portal-green);
+  color: var(--color-portal-green);
+  box-shadow: 0 0 20px rgba(68, 255, 154, 0.12);
+}
+
+.species-page__filter-icon {
+  font-size: 1.05rem;
+}
+
+.species-page__filter-label {
+  line-height: 1;
+}
+
+/* Error */
+.species-page__error {
+  max-width: 600px;
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--color-dead);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Prompt / Empty */
+.species-page__prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  text-align: center;
+}
+
+.species-page__prompt-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.species-page__prompt-text {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .species-page__header {
+    padding: 95px var(--spacing-md) var(--spacing-lg);
+  }
+
+  .species-page__title {
+    font-size: 1.8rem;
+  }
+
+  .species-page__filters {
+    gap: 6px;
+  }
+
+  .species-page__filter-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+}

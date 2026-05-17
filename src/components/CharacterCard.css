@@ -1,0 +1,158 @@
+/* ===== Character Card Styles ===== */
+.character-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition-slow);
+  cursor: default;
+  position: relative;
+}
+
+.character-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(68, 255, 154, 0.25);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.character-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.character-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.character-card:hover .character-card__image {
+  transform: scale(1.08);
+}
+
+.character-card__image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--color-bg-card) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.character-card__status-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.character-card__status-badge--alive {
+  background: rgba(68, 255, 154, 0.15);
+  color: var(--color-alive);
+  border: 1px solid rgba(68, 255, 154, 0.3);
+}
+
+.character-card__status-badge--dead {
+  background: rgba(255, 71, 87, 0.15);
+  color: var(--color-dead);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+.character-card__status-badge--unknown {
+  background: rgba(255, 165, 2, 0.15);
+  color: var(--color-unknown);
+  border: 1px solid rgba(255, 165, 2, 0.3);
+}
+
+.character-card__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.character-card__status-badge--alive .character-card__status-dot {
+  background: var(--color-alive);
+  box-shadow: 0 0 6px var(--color-alive);
+}
+
+.character-card__status-badge--dead .character-card__status-dot {
+  background: var(--color-dead);
+  box-shadow: 0 0 6px var(--color-dead);
+  animation: none;
+}
+
+.character-card__status-badge--unknown .character-card__status-dot {
+  background: var(--color-unknown);
+  box-shadow: 0 0 6px var(--color-unknown);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.character-card__body {
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+}
+
+.character-card__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.character-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.character-card__info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.85rem;
+}
+
+.character-card__info-label {
+  color: var(--color-text-muted);
+  min-width: 60px;
+}
+
+.character-card__info-value {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.character-card__info-value--species {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--color-portal-cyan);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.character-card__info-value--gender {
+  color: var(--color-portal-pink);
+}

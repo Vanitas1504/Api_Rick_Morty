@@ -1,0 +1,126 @@
+/* ===== Error Page Styles ===== */
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.error-page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  animation: fadeInUp 0.6s ease;
+}
+
+.error-page__visual {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-page__code {
+  font-size: 5rem;
+  font-weight: 800;
+  background: var(--gradient-portal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
+}
+
+.error-page__portal-lost {
+  position: absolute;
+  inset: 0;
+}
+
+.error-page__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.error-page__ring--1 {
+  border-top-color: rgba(255, 71, 87, 0.5);
+  border-right-color: rgba(255, 71, 87, 0.2);
+  animation: spin-slow 5s linear infinite;
+}
+
+.error-page__ring--2 {
+  inset: 15px;
+  border-bottom-color: rgba(255, 165, 2, 0.5);
+  border-left-color: rgba(255, 165, 2, 0.2);
+  animation: spin-slow 4s linear infinite reverse;
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-page__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.error-page__message {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+.error-page__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 14px 32px;
+  background: var(--gradient-portal);
+  border-radius: var(--radius-full);
+  color: var(--color-bg-primary);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition-normal);
+  margin-top: var(--spacing-md);
+}
+
+.error-page__link:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .error-page__code {
+    font-size: 3.5rem;
+  }
+
+  .error-page__visual {
+    width: 150px;
+    height: 150px;
+  }
+
+  .error-page__title {
+    font-size: 1.5rem;
+  }
+}

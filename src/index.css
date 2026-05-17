@@ -1,0 +1,130 @@
+/* ===== CSS Reset & Design Tokens ===== */
+:root {
+  /* Colors - Rick and Morty Portal Theme */
+  --color-bg-primary: #0b0e17;
+  --color-bg-secondary: #111827;
+  --color-bg-card: #1a1f35;
+  --color-bg-card-hover: #222845;
+  --color-bg-nav: rgba(11, 14, 23, 0.85);
+  --color-portal-green: #44ff9a;
+  --color-portal-cyan: #00d4ff;
+  --color-portal-purple: #9945ff;
+  --color-portal-pink: #ff6ec7;
+  --color-text-primary: #f0f2f5;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+  --color-border: rgba(68, 255, 154, 0.12);
+  --color-alive: #44ff9a;
+  --color-dead: #ff4757;
+  --color-unknown: #ffa502;
+
+  /* Gradients */
+  --gradient-portal: linear-gradient(135deg, #44ff9a 0%, #00d4ff 50%, #9945ff 100%);
+  --gradient-card: linear-gradient(145deg, #1a1f35 0%, #151a2e 100%);
+  --gradient-hero: linear-gradient(180deg, rgba(11, 14, 23, 0) 0%, #0b0e17 100%);
+
+  /* Typography */
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 40px rgba(68, 255, 154, 0.15);
+  --shadow-glow: 0 0 30px rgba(68, 255, 154, 0.2);
+  --shadow-nav: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(68, 255, 154, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(153, 69, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(68, 255, 154, 0.3);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(68, 255, 154, 0.5);
+}
