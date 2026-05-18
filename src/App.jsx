@@ -24,7 +24,7 @@ function App() {
       </div>
       <footer className="footer">
         <p className="footer__text">
-          Hecho con <span className="footer__heart">❤️</span> usando React &{' '}
+         Desarrollado por  Carlos Soria con ayuda de IA <span className="footer__heart">❤️</span> usando React &{' '}
           <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener noreferrer">
             Rick and Morty API
           </a>

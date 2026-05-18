@@ -88,14 +88,14 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className="hero__visual">
+        {/* <div className="hero__visual">
           <div className="hero__portal">
             <div className="hero__portal-ring hero__portal-ring--1"></div>
             <div className="hero__portal-ring hero__portal-ring--2"></div>
             <div className="hero__portal-ring hero__portal-ring--3"></div>
             <div className="hero__portal-core"></div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Character List */}
